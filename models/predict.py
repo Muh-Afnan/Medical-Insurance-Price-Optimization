@@ -61,20 +61,3 @@ class InsurancePredictor:
         except Exception as e:
             print(f"Could not extract feature importance: {e}")
             return pd.DataFrame()
-
-if __name__ == "__main__":
-    # Test prediction
-    try:
-        predictor = InsurancePredictor()
-        sample_input = {
-            'age': 19,
-            'sex': 'female',
-            'bmi': 27.9,
-            'children': 0,
-            'smoker': 'yes',
-            'region': 'southwest'
-        }
-        prediction = predictor.predict(sample_input)
-        print(f"Predicted Charges: ${prediction[0]:.2f}")
-    except Exception as e:
-        print(f"Error making prediction: {e}")
